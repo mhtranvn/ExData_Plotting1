@@ -11,7 +11,7 @@ rm(all_data)
 data$datetime<-strptime(paste(data$Date,data$Time),"%d/%m/%Y %H:%M:%S")
 # open png device, png() has default size 480x480
 png(filename = "plot3.png")
-#par(cex=0.75)
+# draw the plot and add more with lines()
 with(data,plot(datetime, Sub_metering_1, type="l", col = "black", xlab="", ylab="Energy sub metering"))
 with(data,lines(datetime, Sub_metering_2, type="l", col = "red"))
 with(data,lines(datetime, Sub_metering_3, type="l", col = "blue"))
